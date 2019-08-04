@@ -1,0 +1,113 @@
+.navbar{
+  position: fixed;
+  height:50px;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #F1F7D5;
+
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+// .clearfix::after {
+//   content: "";
+//   display: table;
+//   clear: both;
+// }
+
+.logout-icon{
+  position: relative;
+  top: 3px;
+  background: asset-url('logout.png');
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  cursor: pointer;
+}
+
+.login-icon{
+  position: relative;
+  top: 3px;
+  background: asset-url('login.png');
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  cursor: pointer;
+}
+
+.menu{
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  float: right;
+  z-index: 10000;
+}
+
+.menu a{
+text-decoration: none;
+color: brown;
+font-size: 20px;
+font-weight: bold;
+padding-right: 10px;
+}
+
+.menu .link1{
+  color: brown;
+  font-size: 20px;
+  font-weight: bold;
+  padding-right: 10px;
+  cursor: pointer;
+  &:after{
+    content: "\25BE";
+    color: black;
+  }
+}
+
+.search_input{
+  position: absolute;
+  left: 10px;
+  top: 13px;
+  color: brown;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.acc_menu{
+  display: none;
+  height: 100px;
+  width: auto;
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  background-color: #ecf4c5;
+  border: 1px solid grey;
+  padding: 10px;
+  z-index: 5;
+  & a{
+    text-decoration: none;
+    color: brown;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 2.2;
+  }
+  // &:before{
+  //   content: ".";
+  //   font-size: 1px;
+  //   width: 75px;
+  //   position:absolute;
+  //   top: -1px;
+  //   right: 35px;
+  //   background-color: #ecf4c5;
+  // }
+}
+
+.logout{
+  transform: translateY(6px);
+}

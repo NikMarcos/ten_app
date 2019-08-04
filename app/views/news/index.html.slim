@@ -1,0 +1,5 @@
+.news_block.clearfix
+  - @news.each do |item|
+    = item.title
+    = image_tag item.cover.url(:thumb) if item.cover?
+    = item.body

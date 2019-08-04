@@ -1,0 +1,46 @@
+ru:
+  time:
+   formats:
+     long: "%Y-%m-%d %H:%M:%S"
+  account:
+    email: 'Электронная почта: '
+    name: 'Имя: '
+    images: "Загруженные изображен"
+  activerecord:
+    models:
+      user:
+        one: "Пользователь"
+        other: " Пользователи"
+      article:
+        one: "Статья"
+        many: "Статей"
+        other: "Статьи"
+      news_item:
+        one: "Новость"
+        many: "Новостей"
+        other: "Новости"
+    attributes:
+      user:
+        name: "Имя"
+        email: "Электронная почта"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        current_password: "Текущий пароль"
+        submit: "Отправить"
+        cancel: "Удалить аккаунт"
+        role: "Роль"
+        created_at: "Создан"
+        updated_at: "Обновлен"
+        image: "Аватар"
+      article:
+        title: "Название"
+        body: "Статья"
+        user: "Пользователь"
+        created_at: "Создан"
+        updated_at: "Обновлен"
+        id: "Идентификатор"
+        theme: "Тема"
+      news_item:
+        title: "Заголовок"
+        body: "Новость"
+        created_at: "Опубликована"

@@ -1,0 +1,9 @@
+br
+.article_block
+  - @articles.each do |item|
+    h3
+      = item.title
+    br
+    h4
+      = item.body
+    br

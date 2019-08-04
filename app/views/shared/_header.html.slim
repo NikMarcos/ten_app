@@ -1,0 +1,22 @@
+.navbar.clearfix
+  .search_input
+    'Поиск
+    input type="text"
+  .menu
+    = link_to I18n.t('activerecord.models.article.other'), article_index_path
+    = link_to "Link2", news_index_path
+    = link_to "Link3", news_index_path
+    = link_to I18n.t('activerecord.models.news_item.other'), news_index_path
+    - if user_signed_in?
+      span.link1 #{current_user.name}
+    - else
+      = link_to "", new_user_session_path, method: :get, class:"login-icon"
+      = link_to "Зарегестрироваться", new_user_registration_path, method: :get
+- if user_signed_in?
+  .acc_menu
+    = link_to "Мой аккаунт", account_path(current_user.id), method: :get
+    br
+    = link_to "Редактировать аккаунт", edit_user_registration_path, method: :get
+    br
+    .logout
+      = link_to "", destroy_user_session_path, class:"logout-icon", method: :delete

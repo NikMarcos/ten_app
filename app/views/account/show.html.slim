@@ -1,0 +1,26 @@
+.name
+  = I18n.t('activerecord.attributes.user.name')
+  br
+  = @user.name
+.email
+  = I18n.t('account.email')
+  br
+  = @user.email
+
+.images
+  - @images.each do |image|
+    = image_tag image.file.url(:thumb)
+
+- if @user.id == current_user.id
+  = form_for :image, url: "/account/#{current_user.id}/images", method: :post do |f|
+    'Изображение
+    br
+    = f.file_field :file
+    = f.hidden_field :user_id, :value => @user.id
+    br
+    .btn.btn-success
+      = f.submit
+    br
+
+
+= render 'shared/footer'
