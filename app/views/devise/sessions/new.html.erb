@@ -17,10 +17,12 @@
       <%= f.label :remember_me %>
     </div>
   <% end %>
-
-  <div class="actions">
+  <br>
+  <span class="actions">
     <%= f.submit "Log in" %>
-  </div>
+  </span>
+  or
+  <span class="forgot_pass">
+    <%= render "devise/shared/links" %>
+  </span>
 <% end %>
-
-<%= render "devise/shared/links" %>

@@ -8,8 +8,8 @@ development:
     encoding: utf8
     database: ten_app
     pool: 10
-    username: defaultuser
-    password: resistance
+    username: macuser
+    password: ''
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -19,13 +19,13 @@ test:
     encoding: utf8
     database: ten_app
     pool: 10
-    username: defaultuser
-    password: resistance
+    username: macuser
+    password: ''
 
 production:
     adapter: postgresql
     encoding: utf8
     database: ten_app
     pool: 10
-    username: defaultuser
-    password: resistance
+    username: macuser
+    password: ''

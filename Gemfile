@@ -16,6 +16,8 @@ gem 'slim'
 gem 'activeadmin'
 # Use SCSS for stylesheets
 gem 'sass-rails'
+# send variable from controller/action to page's JS
+gem 'gon'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
@@ -31,7 +33,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'turbolinks', '~> 5'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'

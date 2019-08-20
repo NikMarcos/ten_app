@@ -10,8 +10,8 @@
     - if user_signed_in?
       span.link1 #{current_user.name}
     - else
-      = link_to "", new_user_session_path, method: :get, class:"login-icon"
-      = link_to "Зарегестрироваться", new_user_registration_path, method: :get
+      = link_to "", new_user_session_path, title:"Вход", method: :get, class:"icon login-icon"
+      = link_to  "", new_user_registration_path, title:"Зарегестрироваться", method: :get, class:"icon reg-icon"
 - if user_signed_in?
   .acc_menu
     = link_to "Мой аккаунт", account_path(current_user.id), method: :get
@@ -19,4 +19,4 @@
     = link_to "Редактировать аккаунт", edit_user_registration_path, method: :get
     br
     .logout
-      = link_to "", destroy_user_session_path, class:"logout-icon", method: :delete
+      = link_to "", destroy_user_session_path, title:"Выход", class:"icon logout-icon", method: :delete

@@ -1,0 +1,28 @@
+br
+= form_with(model: @article, url: '/article') do |form|
+  .field
+    = form.label :title
+    br
+    = form.text_field :title
+  br
+  .field
+    = form.label :body
+    br
+    = form.text_area :body, size: "10x15", required: true
+  br
+  .field
+    = form.label :theme
+    br
+    = form.text_field :theme
+  br
+  - @article.images.each do |u|
+    .img-show
+      = image_tag u.url(:thumb)
+      = link_to "Удалить", delete_picture_path(article.id, article.pictures.index(u)), method: :get
+  br
+  .field
+    = form.file_field :pictures, multiple: true
+  = form.hidden_field :user_id, :value => current_user.id
+  br
+  .actions
+    = form.submit I18n.t('activerecord.models.article.submit')

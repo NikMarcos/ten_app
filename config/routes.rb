@@ -10,6 +10,8 @@ TenApp::Application.routes.draw do
   resources :account do
     resources :images
   end
+  get '/set_images/', :to => 'article#set_images', as: 'set_images'
+  post '/get_images/', :to => 'images#get_images', as: 'get_images'
   # get 'account/:id', to: 'pages#account', as: 'account'
   # get 'accounts', to: 'pages#accounts'
   # post '/account/:id/images', to: 'images#create', as: 'save'

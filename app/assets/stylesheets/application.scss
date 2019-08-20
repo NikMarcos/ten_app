@@ -1,49 +1,65 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
  *= require_self
  *= require_tree .
  */
+
+ @mixin style_prefix($property, $value) {
+   #{'-webkit-'+$property}: $value;
+   #{'-moz-'+$property}: $value;
+   #{'-ms-'+$property}: $value;
+   #{'-o-'+$property}: $value;
+   #{$property}: $value;
+ }
+
 
 html{
   margin: 0px;
   padding: 0px;
 }
 
+.ui-tooltip.tooltip{
+  border-radius: 5%;
+  background-color: #F5F5DC;
+}
+
 body{
   margin: 0px;
   padding: 0px;
 }
-.container{
+
+.content {
   position: relative;
   top: 50px;
+  bottom: 100px;
   margin-left: 10px;
+  padding-bottom: 110px;
+  & a{
+      text-decoration: none !important;
+    }
 }
 
  h2, p{
    margin-top: 0px;
  }
 
- .actions .log_in_link{
+ .log_in_link{
    position: relative;
-   right: 3px;
-   font-size: 15px;
+   left: 7px;
+   border: 1px solid black;
+   border-radius: 5px;
+   padding: 5px 15px 5px 15px;
+   background-color: #cde9f7;
+   font-size: 10px;
    font-weight: bold;
-   text-decoration: none;
-   &:hover{
-     border: 1px solid black;
-     border-radius: 5px;
-     padding: 4px;
-     // top: 3px;
-   }
+   transition: background-color 1s, color 1s;
  }
+
+
+.log_in_link:hover{
+  background-color: #8db4f0;
+  color: white;
+}
+
 
  .actions{
    padding-bottom: 10px;
@@ -52,5 +68,58 @@ body{
  }
 
  .actions button{
-   padding-bottom: 10px;
+   display: inline-block;
+   padding-bottom: 50px;
  }
+
+ .field label{
+   font-size: 15px;
+ }
+
+ .field{
+   width: 400px;
+ }
+
+ .recover_pass_link{
+   display: inline-block;
+   position: relative;
+   left: 7px;
+   border: 1px solid black;
+   border-radius: 5px;
+   padding: 3px;
+   background-color: #cde9f7;
+   font-size: 10px;
+   font-weight: bold;
+   transition: background-color 1s, color 1s;
+ }
+
+ .recover_pass_link:hover{
+   background-color: #8db4f0;
+   color: white;
+ }
+
+ .imagePoint{
+   width: 70px;
+   height: 70px;
+   padding: 10px;
+   text-align: center;
+   font-size: 50px;
+   color: black;
+   float: left;
+   background: asset-url('photo.svg') no-repeat;
+   background-size:contain;
+   // background-color: #cde9f7;
+   // opacity: 1;
+   // border: 1px solid blue;
+   // border-radius: 5px;
+ }
+
+ .clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+ // .article_block{
+ //   @include style_prefix(transform, rotate(30deg));
+ // }
