@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "RobotoSlab";
+  src: font-url('fonts/RobotoSlab/hinted-RobotoSlab-Light.eot'); /* IE9 */
+  src: font-url('fonts/RobotoSlab//Lobster.eot?iefix') format('embeded-opentype'),
+       font-url('fonts/RobotoSlab/hinted-RobotoSlab-Light.woff') format('woff'),
+       font-url('fonts/RobotoSlab/hinted-RobotoSlab-Light.ttf') format('truetype'),
+       font-url('fonts/RobotoSlab/hinted-RobotoSlab-Light.svg') format('embeded-opentype'); /* IE6 - IE8 */
+}
+
+
+@font-face {
+  font-family: "Lobster";
+  src: font-url('Lobster/Lobster.eot'); /* IE9 */
+  src: font-url('Lobster/Lobster.eot?iefix') format('embeded-opentype'),
+       font-url('Lobster/Lobster.ttf') format('truetype');
+}

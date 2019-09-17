@@ -2,13 +2,14 @@ ActiveAdmin.register Article do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :title, :body, :theme, images_attributes: %i[id file _destroy]
+permit_params :title, :user_id, :body, :theme, images_attributes: %i[id file _destroy]
 
 form :html => { :enctype => "multipart/form-data" } do |f|
  f.inputs do
    f.input :title
    f.input :body
    f.input :theme
+   f.input :user_id
  end
  f.has_many :images, allow_destroy: true do |i|
   i.input :file
@@ -26,6 +27,7 @@ show do
   attributes_table do
     row :title
     row :body
+    row :user
     row "Images" do |m|
       m.images.each do |img|
         div do

@@ -1,26 +1,53 @@
-.name
-  = I18n.t('activerecord.attributes.user.name')
+.content-margin
+  .short_info
+    .personal_data
+      strong
+        = I18n.t('activerecord.attributes.user.name')
+      .name.info
+        = @user.name
+      strong
+        = I18n.t('activerecord.attributes.user.email')
+      .name.info
+        = @user.email
+      strong
+        = I18n.t('activerecord.attributes.user.location')
+      .name.info
+        | Россия, Челябинск
+    .image_box
+      .name
+        | Мои фото &nbsp;
+        = @images.length
+      span.images
+        - @images.each do |image|
+          = image_tag image.file.url(:thumb)
+  .demo
+    ul#lightSlider
+      - @images.each_with_index do |image, index|
+        - if index == 0
+          li
+            = image_tag image.file.url(:large)
+        - else
+          li.toRight
+            = image_tag image.file.url(:large)
+    button#prev disabled="disabled" style="opacity:0.5;" Prev
+    button#next Next
   br
-  = @user.name
-.email
-  = I18n.t('account.email')
-  br
-  = @user.email
-
-.images
-  - @images.each do |image|
-    = image_tag image.file.url(:thumb)
-
-- if @user.id == current_user.id
-  = form_for :image, url: "/account/#{current_user.id}/images", method: :post do |f|
-    'Изображение
-    br
-    = f.file_field :file
-    = f.hidden_field :user_id, :value => @user.id
-    br
-    .btn.btn-success
-      = f.submit
-    br
-
-
-= render 'shared/footer'
+  - if @user.id == current_user.id
+    = form_for :image, url: "/account/#{current_user.id}/images", method: :post do |f|
+      'Изображение
+      br
+      = f.file_field :file
+      = f.hidden_field :user_id, :value => @user.id
+      br
+      .btn.btn-success
+        = f.submit
+      br
+      h3
+        | О себе
+      p.about
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dolor enim, sodales eu sem ac, vestibulum consequat ligula. Curabitur a tellus eu nisi ornare lobortis. Orci varius natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus. Sed id mauris congue, luctus orci eget, dapibus odio. Praesent cursus, augue feugiat mattis condimentum, urna lacus tristique quam, ut posuere ipsum nulla in turpis. Proin sed massa in risus vestibulum tempor. Mauris sit amet fermentum nisi. Sed volutpat, tortor et bibendum consequat, urna turpis dictum diam, a fermentum lorem arcu ac nulla. Ut lacinia dictum ligula imperdiet accumsan. Etiam quis tristique mi. Mauris bibendum purus id ligula ultricies elementum. Donec venenatis ultricies purus ac pulvinar. Etiam tempor ex ut massa euismod fringilla et nec mauris. Etiam consectetur ex quam. Fusce ultrices eros sem, quis ornare turpis auctor quis. Phasellus placerat consequat neque eget lacinia. Donec tincidunt felis metus, sit amet egestas mauris cursus nec. Cras metus nibh, viverra at mi feugiat, venenatis placerat urna. Vivamus consequat lorem tincidunt dui lobortis, sit amet aliquet ante vehicula. Etiam efficitur erat non mauris vestibulum hendrerit. Aenean eu ante libero. Donec
+        sit amet libero et enim efficitur fringilla at quis est. Vivamus metus ante, maximus in cursus sed, molestie eu neque. Mauris eu nibh odio. Mauris eu nisi blandit, placerat enim sagittis, tristique felis. Nullam tempus risus sed ligula tempus sollicitudin. Phasellus interdum tortor sem, a vestibulum augue finibus eu. Aliquam eros leo, rhoncus eget leo ut, blandit aliquet leo. Sed interdum laoreet neque, sed faucibus leo condimentum molestie. Nulla id semper erat. Aliquam consectetur magna vel mauris dignissim, quis pulvinar quam feugiat. In sed
+        dapibus tellus. Nulla facilisi. Proin maximus risus massa,
+         porta vulputate velit pulvinar quis. Vivamus maximus maximus sem, sit amet euismod dui interdum sit amet. Nulla non nisl feugiat, tempor ante et, sodales risus. Ut condimentum cursus metus, quis tincidunt tortor sagittis id. Phasellus ligula erat, convallis ut vehicula sit amet, rhoncus quis neque. Donec sollicitudin laoreet felis. Etiam gravida nisi eu pellentesque tincidunt. Donec nunc nisl, ultricies et lectus ac, venenatis hendrerit orci. Ut hendrerit, sapien at egestas posuere, odio massa faucibus sapien, vel gravida velit neque vitae justo. Aenean sit amet lectus diam. Donec aliquet fringilla est vitae vestibulum. Integer iaculis, ligula vel sagittis laoreet, nisi tortor condimentum ex, sit amet rutrum eros ipsum sit amet purus. Curabitur ac pulvinar ligula, sit amet molestie arcu. Ut ut auctor dui. Vivamus et pharetra metus. Nullam consectetur massa quis ultrices consequat. Duis ullamcorper imperdiet enim ac imperdiet. Mauris efficitur dolor at massa rutrum mattis. Proin convallis tellus a quam fermentum feugiat. Proin semper
+         tellus ornare sem viverra rutrum. Morbi vitae est eleifend, convallis ante ac, varius velit. Cras erat sem, tristique et pellentesque vel, aliquet eget enim. Aenean in imperdiet quam. Proin congue ex libero. Fusce viverra ac ipsum in rutrum. Etiam sed turpis efficitur, scelerisque lectus sed, commodo risus. Integer eu tempor elit. Nullam magna turpis, facilisis in purus et, interdum fringilla ligula. Nam lacus sem, ultricies nec volutpat in, rutrum sed sem. Nam bibendum neque nec mauris facilisis, et pretium enim imperdiet. Duis ac sagittis purus, eget dictum odio. Proin sodales sapien sed est rhoncus varius. Fusce sit amet dictum est. Donec rutrum diam a maximus tristique. Quisque fringilla sem at eleifend tincidunt. Aenean sagittis leo condimentum mi porttitor gravida eget vel erat. Duis at dolor odio. Vivamus sed semper lectus, a semper ex. Pellentesque at ante maximus urna suscipit varius at a lectus. Praesent facilisis, mauris ut cursus mattis, nunc turpis gravida orci, a venenatis enim dui quis dui. Cras nunc neque, convallis sit amet velit ut, molestie condimentum ligula. Pellentesque in nisi tincidunt, volutpat sem ut, gravida arcu. Vestibulum tincidunt augue orci, vel vestibulum orci tincidunt quis. Nam nec tempor velit, eget convallis sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus vitae pellentesque elit. Duis in vehicula tellus. Fusce magna tortor, cursus quis commodo ac, eleifend ut ante. Pellentesque semper mi elit, a tempus diam sollicitudin ultricies. Sed dictum venenatis felis, eget imperdiet turpis sodales vitae. Aenean ac sem egestas, convallis nisl vel, cursus massa. Ut maximus, dolor quis feugiat congue, risus neque rutrum nulla, ut varius massa risus ac ipsum. Nam ultricies ante massa, eu lacinia turpis sollicitudin ac. Nullam sed libero augue. Cras imperdiet sed urna placerat dictum. Donec fringilla nisl id sagittis laoreet. Fusce in suscipit sapien. In consequat neque tristique quam elementum, non mollis arcu pulvinar. Nunc quis venenatis sapien. Suspendisse potenti. Vivamus rutrum massa id nunc commodo, eget tempor enim volutpat. Mauris sagittis ex in vulputate consequat. Suspendisse potenti. Etiam vel dui non velit elementum pellentesque et in urna. Ut sit amet tincidunt magna. Sed ac facilisis nulla, nec vulputate tellus. Praesent in consequat libero. Donec nec neque nec erat convallis laoreet sit amet sit amet sem. In ullamcorper nunc convallis dolor iaculis facilisis. Sed ornare tempus pulvinar. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque pellentesque, neque vel tempor placerat, ipsum leo aliquam ipsum, eu auctor orci neque non nunc. Vivamus pharetra sagittis faucibus. In ullamcorper sit amet magna in eleifend. Maecenas ut fermentum arcu, sit amet sollicitudin lacus. Nunc porta lorem nec urna consequat, a eleifend est sodales. Vivamus gravida porta eros, sit amet porta lorem tristique sed. Vestibulum non sodales nisl. Nulla aliquet vel odio vitae lobortis. Donec lacus nunc, luctus eu rhoncus nec, porttitor in nisl. Nam blandit metus et urna molestie finibus. Vestibulum quis sagittis tortor. Praesent id elementum nunc. Maecenas congue tellus in leo scelerisque, et tristique arcu ornare. Maecenas vitae enim metus. Praesent in interdum augue. Quisque rhoncus, orci ut pellentesque interdum, nunc nunc tincidunt enim, id gravida nibh urna quis lorem. Aenean mollis justo in mauris commodo, in rhoncus ligula faucibus. Quisque et tellus scelerisque, vestibulum eros quis, maximus enim. Donec ut magna sit amet leo finibus fermentum. Mauris vel ex eu metus tempor vehicula non ut enim. Duis congue maximus blandit. Integer sit amet hendrerit ex. Praesent facilisis eleifend leo. Fusce eget.

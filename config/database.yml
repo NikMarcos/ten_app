@@ -8,7 +8,7 @@ development:
     encoding: utf8
     database: ten_app
     pool: 10
-    username: defaultuser
+    username: macuser
     password: resistance
 
 # Warning: The database defined as "test" will be erased and

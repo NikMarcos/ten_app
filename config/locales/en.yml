@@ -42,8 +42,9 @@ en:
         other: "Новости"
     attributes:
       user:
-        name: "Имя"
+        name: "Name: "
         email: "Электронная почта"
+        location: "Residence: "
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
         current_password: "Текущий пароль"
@@ -55,6 +56,7 @@ en:
         image: "Аватар"
       article:
         title: "Название"
+        more: "Continue"
         body: "Статья"
         user: "Пользователь"
         created_at: "Создан"

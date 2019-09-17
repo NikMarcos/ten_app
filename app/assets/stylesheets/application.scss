@@ -10,21 +10,28 @@
  *
  *= require_self
  *= require_tree .
+ *= require_lightslider
  */
 
-html{
+ @import '/utils/mixins';
+
+*{
   margin: 0px;
   padding: 0px;
 }
 
-body{
-  margin: 0px;
-  padding: 0px;
+a{
+  text-decoration: none !important;
 }
+
+html, body{
+  background-color: #FBFCFC !important;
+}
+
 .container{
-  position: relative;
-  top: 50px;
-  margin-left: 10px;
+  height: 80%;
+  box-sizing: border-box;
+  padding: 55px 0 0 0;
 }
 
  h2, p{
@@ -45,6 +52,8 @@ body{
    }
  }
 
+
+
  .actions{
    padding-bottom: 10px;
    width: 80px;
@@ -53,4 +62,12 @@ body{
 
  .actions button{
    padding-bottom: 10px;
+ }
+
+ .content-margin{
+   padding: 10px 20px;
+ }
+
+ .new_user{
+   width: 50%;
  }

@@ -23,6 +23,12 @@ gem 'uglifier'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails'
 
+group :development do
+  gem 'guard', require: false
+  gem 'rack-livereload'
+  gem 'guard-livereload', require: false
+end
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
