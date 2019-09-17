@@ -1,0 +1,24 @@
+.details
+  span
+    h4
+      'Название: &nbsp;
+    strong
+      = article.title
+  span
+    h4
+      'Автор: &nbsp;
+    strong
+      - if article.user_id
+        = article.user_id
+      - else
+        'Noname
+  span
+    h4
+      'Тема: &nbsp;
+    strong
+      = article.theme
+  span
+    h4
+      'Дата написания: &nbsp;
+    strong
+      = article.created_at

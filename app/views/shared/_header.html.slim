@@ -1,4 +1,4 @@
-.navbar.clearfix
+.navbar
   .search_input
     'Поиск
     input type="text"
@@ -12,11 +12,15 @@
     - else
       = link_to "", new_user_session_path, method: :get, class:"login-icon"
       = link_to "Зарегестрироваться", new_user_registration_path, method: :get
-- if user_signed_in?
-  .acc_menu
-    = link_to "Мой аккаунт", account_path(current_user.id), method: :get
-    br
-    = link_to "Редактировать аккаунт", edit_user_registration_path, method: :get
-    br
-    .logout
-      = link_to "", destroy_user_session_path, class:"logout-icon", method: :delete
+    - if user_signed_in?
+      .acc_menu
+        = link_to "Мой аккаунт", account_path(current_user.id), method: :get
+        br
+        = link_to "Редактировать аккаунт", edit_user_registration_path, method: :get
+        br
+        .logout
+          = link_to "", destroy_user_session_path, class:"logout-icon", method: :delete
+  .gumb
+    div
+    div
+    div

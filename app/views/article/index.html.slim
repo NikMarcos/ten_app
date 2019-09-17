@@ -1,9 +1,13 @@
-br
-.article_block
-  - @articles.each do |item|
-    h3
-      = item.title
-    br
-    h4
-      = item.body
-    br
+span.topic
+  'Статьи пользователей
+.article_block.content-margin
+  - @articles.each_with_index do |item, i|
+    .article_index.article
+      - if item.body.blank? || item.title.blank?
+        - next
+      h3
+        = item.title
+      br
+        = truncate(item.body, length: 1000)
+        br
+        = link_to I18n.t('activerecord.attributes.article.more'), article_path(item.id)

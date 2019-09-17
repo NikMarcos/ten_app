@@ -3,8 +3,8 @@ ru:
    formats:
      long: "%Y-%m-%d %H:%M:%S"
   account:
-    email: 'Электронная почта: '
-    name: 'Имя: '
+    email: "Электронная почта: "
+    name: "Имя: "
     images: "Загруженные изображен"
   activerecord:
     models:
@@ -21,8 +21,9 @@ ru:
         other: "Новости"
     attributes:
       user:
-        name: "Имя"
-        email: "Электронная почта"
+        name: "Имя: "
+        email: "Электронная почта: "
+        location: "Местожительство: "
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
         current_password: "Текущий пароль"
@@ -33,6 +34,7 @@ ru:
         updated_at: "Обновлен"
         image: "Аватар"
       article:
+        more: "Продолжение"
         title: "Название"
         body: "Статья"
         user: "Пользователь"
