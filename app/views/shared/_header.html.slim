@@ -3,7 +3,8 @@
     'Поиск
     input type="text"
   .menu
-    = link_to I18n.t('activerecord.models.article.other'), article_index_path
+    - if user_signed_in?
+      = link_to I18n.t('activerecord.models.article.other'), article_index_path
     = link_to "Link2", news_index_path
     = link_to "Link3", news_index_path
     = link_to I18n.t('activerecord.models.news_item.other'), news_index_path
