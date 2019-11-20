@@ -29,8 +29,10 @@
         - else
           li.toRight
             = image_tag image.file.url(:large)
-    button#prev disabled="disabled" style="opacity:0.5;" Prev
-    button#next Next
+    button#prev. disabled="disabled"
+      = image_tag('left.png')
+    button#next
+      = image_tag('right.png')
   br
   - if @user.id == current_user.id
     = form_for :image, url: "/account/#{current_user.id}/images", method: :post do |f|
@@ -41,6 +43,8 @@
       br
       .btn.btn-success
         = f.submit
+      br
+      .large_image
       br
       h3
         | О себе
